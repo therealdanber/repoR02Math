@@ -25,3 +25,22 @@ for (i in 1:length(x)){
 }
 print(x); y
 plot(x,y)
+
+#Equation of a circle: (x-h)^2 + (y-k)^2 = r^2
+x <- c(-5:5); x; length(x)
+yp <- c(-5:5)*0; yp; length(yp)
+yn <- c(-5:5)*0; yn; length(yn)
+h <- 0; k <- 0; r <- max(x)
+r
+for (i in 1:length(x)){
+  #(x[i]-h)^2 + (y[i]-k)^2 = r^2
+  yp[i] <- sqrt(r^2 - (x[i]-h)^2) + k
+  print(paste("x=",x[i]," yp=",yp[i]))
+}
+yn <- yp * (-1); 
+print(x); yp; yn
+plot(x,yp, type="o", col="blue", pch="o", xlim=c(-5, 5), ylim = c(-5,5)); 
+points(x, yn, col="red", pch="*")
+lines(x, yn, col="red",lty=2)
+# Add a title
+title("Circle")
